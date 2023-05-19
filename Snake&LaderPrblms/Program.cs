@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnakeLadderProblem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace Snake_LaderPrblms
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake And Ladder");
-            Snake_LadderPrblm.PlayStart();
+            Snake_LadderPrblm.PlayerPosition();
             Console.ReadLine();
         }
     }
