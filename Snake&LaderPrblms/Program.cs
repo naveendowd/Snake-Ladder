@@ -12,7 +12,7 @@ namespace Snake_LaderPrblms
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake And Ladder");
-            Snake_LadderPrblm.CheckingPosition();
+            Snake_LadderPrblm.ReachedHundred();
             Console.ReadLine();
         }
     }
