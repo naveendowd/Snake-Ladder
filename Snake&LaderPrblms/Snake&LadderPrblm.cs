@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 namespace SnakeLadderProblem
 {
      class Snake_LadderPrblm
-     { 
+     {
         public const int CaseOfNoPlay = 0;
         public const int CaseOfLadder = 1;
         public const int CaseOfSnake = 2;
         public const int MaxPosition = 100;
 
-        public static void ReachedHundred()
+        public static void exactWinningPosition()
         {
             Console.WriteLine("Start the snake and ladder game");
-            Console.WriteLine("Single player at start position 0");
-           
+            Console.WriteLine("Single player at starit position 0");
+            Console.WriteLine(" ");
             int position = 0;
             while (position != MaxPosition)
             {
@@ -31,7 +31,7 @@ namespace SnakeLadderProblem
                 {
                     case CaseOfNoPlay:
                         {
-                            Console.WriteLine("Option NO PLAY selected " + position);
+                            Console.WriteLine("Optinc NO PLAY selected " + position);
                             Console.WriteLine("Player stey at same postion");
                             break;
                         }
@@ -49,18 +49,22 @@ namespace SnakeLadderProblem
                             Console.WriteLine("Option SNAKE is selected " + (RollDice + position));
                             Console.WriteLine("Player move behind by " + RollDice);
                             position = position - RollDice;
-                            if (position < 0)
-                            {
-                                position = 0;
-                            }
                             break;
                         }
                 }
-                Console.WriteLine("Player position: " + position + "\n");
-
+                if (position < 0)
+                {
+                    position = 0;
+                    Console.WriteLine("Player have to restart from position " + position);
+                }
+                if (position > MaxPosition)
+                {
+                    position = position - RollDice;
+                    Console.WriteLine(" Your chance is skip. Stay at same position " + position);
+                }
+                Console.WriteLine("Current position of player is " + position);
+                Console.WriteLine();
             }
         }
-
-
-     }
+    }
 }
